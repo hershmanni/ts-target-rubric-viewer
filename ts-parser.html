@@ -5,8 +5,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script src="jquery.csv.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js" integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c=" crossorigin="anonymous"></script>
-<script src="FileSaver/src/FileSaver.js"></script>
-<script src="jQuery-Word-Export/jquery.wordexport.js"></script>
 <style>
   body {
       width: 80%;
@@ -83,16 +81,6 @@
       font-weight: bold;
   }
 
-  .word-icon {
-        font-family:"Helvetica", sans-serif;
-        font-size: 24px;
-        font-weight: bold;
-        background-color: #0054a6;
-        color: white;
-        padding: 2px 5px;
-        vertical-align: middle;
-    }  
-
   @media print{
       /* Style print output */
 
@@ -147,14 +135,11 @@
   <div id='header'>
     <h1>BSD Target/Rubric Viewer</h2>
 <table id='control'>
-  <thead><tr><td>Subject</td><td>Grade</td><td></td></tr></thead>
+  <thead><tr><td>Subject</td><td>Grade</td></tr></thead>
   <tbody>
     <tr>
       <td><select id='subject'></select></td>
       <td><select id='grade'></select></td>
-      <td><a class="btn jquery-word-export" href="javascript:void(0)">
-	  <span class="word-icon">W</span></a> Export as .doc
-      </td>
     </tr>
   </tbody>
 </table>
@@ -177,12 +162,5 @@
 </div><!-- end page-content -->
 
 <script src="ts_render.js" type="text/javascript"></script>	
-<script>
-jQuery(document).ready(function($) {
-        $("a.jquery-word-export").click(function(event) {
-            $(".page-content").wordExport();
-        });
-});
-</script>
 </body>
 </html>
